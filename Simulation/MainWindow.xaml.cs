@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Simulation
+namespace SimulationApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -19,6 +19,9 @@ namespace Simulation
         public MainWindow()
         {
             InitializeComponent();
+
+            var map = new Map(10);
+            map.Generate();
         }
     }
 }

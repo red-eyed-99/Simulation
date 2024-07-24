@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simulation
+namespace SimulationApp
 {
     public abstract class BaseCell
     {
         public int X { get; set; }
         public int Y { get; set; }
+
+        public BaseCell(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }

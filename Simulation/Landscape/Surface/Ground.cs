@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simulation.Landscape.Surface
+namespace SimulationApp.Landscape.Surface
 {
     public class Ground : BaseCell
     {
+        public Ground(int x, int y) : base(x, y)
+        {
+
+        }
     }
 }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simulation.Landscape.Surface
+namespace SimulationApp.Landscape.Surface
 {
-    public class GrassGround : BaseCell
+    public class Dirt : BaseCell
     {
+        public Dirt(int x, int y) : base(x, y) { }
+
     }
 }

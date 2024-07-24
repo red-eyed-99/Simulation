@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simulation.Food
+namespace SimulationApp.Food
 {
     public class Meat : BaseCell
     {
+        public Meat(int x, int y) : base(x, y) { }
+
     }
 }

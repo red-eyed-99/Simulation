@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simulation.Creatures.Predators
+namespace SimulationApp.Creatures.Predators
 {
     public class Predator : Creature
     {
+        public Predator(int x, int y) : base(x, y) { }
+
         public override void MakeMove()
         {
             throw new NotImplementedException();
