@@ -14,13 +14,13 @@ namespace SimulationApp
         public List<BaseCell> Cells { get; set; } = new List<BaseCell>();
         public List<Creature> Creatures { get; set; } = new List<Creature>();
 
-        private int size;
+        public int Size { get; private set; }
 
         private Random random = new Random();
 
         public Map(int size)
         {
-            this.size = size;
+            Size = size;
         }
 
         public void Generate()
@@ -34,9 +34,9 @@ namespace SimulationApp
 
         private void GenerateGround()
         {
-            for (int x = 0; x < size; x++)
+            for (int x = 0; x < Size; x++)
             {
-                for (int y = 0; y < size; y++)
+                for (int y = 0; y < Size; y++)
                 {
                     Cells.Add(new Ground(x, y));
                 }

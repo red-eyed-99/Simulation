@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimulationApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1200">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.25*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Grid.ColumnSpan="2">
+            <MenuItem Header="Test1" ></MenuItem>
+            <MenuItem Header="Test2" ></MenuItem>
+            <MenuItem Header="Test3" ></MenuItem>
+        </Menu>
+        <ScrollViewer Name="mapScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Viewbox Stretch="Fill">
+                <Grid Name="mapGrid"  Height="Auto" Width="Auto" Background="Bisque" RenderTransformOrigin="0.5,0.5" ShowGridLines="True" HorizontalAlignment="Center">
+                    <Grid.LayoutTransform>
+                        <ScaleTransform x:Name="scaleTransform"/>
+                    </Grid.LayoutTransform>
+                </Grid>
+            </Viewbox>
+        </ScrollViewer>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using SimulationApp.Landscape.Surface;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,12 +17,30 @@ namespace SimulationApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(Map map)
         {
             InitializeComponent();
 
-            var map = new Map(10);
-            map.Generate();
+            DrawMapGrid(map);
+        }
+
+        public void DrawMapGrid(Map map)
+        {
+            var cellSize = new GridLength(60);
+
+            for (int row = 0; row < map.Size; row++)
+            {
+                var definition = new RowDefinition();
+                definition.Height = cellSize;
+                mapGrid.RowDefinitions.Add(definition);
+            }
+
+            for (int column = 0; column < map.Size; column++)
+            {
+                var definition = new ColumnDefinition();
+                definition.Width = cellSize;
+                mapGrid.ColumnDefinitions.Add(definition);
+            }
         }
     }
 }
