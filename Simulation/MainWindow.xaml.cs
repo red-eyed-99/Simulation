@@ -17,25 +17,25 @@ namespace SimulationApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(Map map)
+        public MainWindow(int mapSize)
         {
             InitializeComponent();
 
-            DrawMapGrid(map);
+            DrawMapGrid(mapSize);
         }
 
-        public void DrawMapGrid(Map map)
+        private void DrawMapGrid(int mapSize)
         {
             var cellSize = new GridLength(60);
 
-            for (int row = 0; row < map.Size; row++)
+            for (int row = 0; row < mapSize; row++)
             {
                 var definition = new RowDefinition();
                 definition.Height = cellSize;
                 mapGrid.RowDefinitions.Add(definition);
             }
 
-            for (int column = 0; column < map.Size; column++)
+            for (int column = 0; column < mapSize; column++)
             {
                 var definition = new ColumnDefinition();
                 definition.Width = cellSize;

@@ -15,8 +15,12 @@ namespace SimulationApp
             var app = new App();
 
             var map = new Map(40);
+            map.Generate();
 
-            var window = new MainWindow(map);
+            var window = new MainWindow(map.Size);
+
+            var mapRenderer = new MapRenderer(map, window);
+            mapRenderer.RenderLandscape();
 
             app.Run(window);
         }

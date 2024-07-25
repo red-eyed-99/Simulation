@@ -16,7 +16,7 @@ namespace SimulationApp
 
         public int Size { get; private set; }
 
-        private Random random = new Random();
+        private Random _random = new Random();
 
         public Map(int size)
         {
@@ -45,11 +45,11 @@ namespace SimulationApp
 
         private void GenerateWater()
         {
-            var randomWaterCellsCount = random.Next(1, 41);
+            var randomWaterCellsCount = _random.Next(1, 41);
 
             var waterCells = new List<Water>(randomWaterCellsCount);
 
-            var randomCell = Cells[random.Next(Cells.Count)];
+            var randomCell = Cells[_random.Next(Cells.Count)];
             //Cells.Remove(Cells.Single(cell => cell.X == randomWaterSource.X && cell.Y == randomWaterSource.Y));
             Cells.Remove(randomCell);
             waterCells.Add(new Water(randomCell.X, randomCell.Y));
@@ -57,9 +57,9 @@ namespace SimulationApp
             for (int i = 1; i < randomWaterCellsCount; i++)
             {
                 var waterCellsNearGround = waterCells.Where(cell => GetNearbyGround(cell).Count > 0).ToList();
-                var randomWaterCell = waterCellsNearGround[random.Next(waterCellsNearGround.Count)];
+                var randomWaterCell = waterCellsNearGround[_random.Next(waterCellsNearGround.Count)];
                 var groundCellsNearWater = GetNearbyGround(randomWaterCell);
-                var randomGroundNearWater = groundCellsNearWater[random.Next(groundCellsNearWater.Count)];
+                var randomGroundNearWater = groundCellsNearWater[_random.Next(groundCellsNearWater.Count)];
                 Cells.Remove(randomGroundNearWater);
                 waterCells.Add(new Water(randomGroundNearWater.X, randomGroundNearWater.Y));
             }
@@ -75,7 +75,7 @@ namespace SimulationApp
 
             for (int i = 0; i < treeCount; i++) 
             {
-                var randomGround = grounds[random.Next(grounds.Count)];
+                var randomGround = grounds[_random.Next(grounds.Count)];
 
                 grounds.Remove(randomGround);
                 Cells.Remove(randomGround);
@@ -91,7 +91,7 @@ namespace SimulationApp
 
             for (int i = 0; i < rockCount; i++)
             {
-                var randomGround = grounds[random.Next(grounds.Count)];
+                var randomGround = grounds[_random.Next(grounds.Count)];
 
                 grounds.Remove(randomGround);
                 Cells.Remove(randomGround);
