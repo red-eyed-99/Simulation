@@ -20,8 +20,6 @@ namespace SimulationApp
     {
         private Map _map;
 
-        private Window _window;
-
         private Grid _mapGrid;
 
         public MapRenderer(Map map, Grid mapGrid)
@@ -79,7 +77,7 @@ namespace SimulationApp
                 Grid.SetRow(image, grass.Y);
                 _mapGrid.Children.Add(image);
             }
-            }
+        }
 
         public void RenderOstrich()
         {

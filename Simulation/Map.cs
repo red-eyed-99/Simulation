@@ -60,7 +60,6 @@ namespace SimulationApp
             var waterCells = new List<Water>(randomWaterCellsCount);
 
             var randomCell = Cells[_random.Next(Cells.Count)];
-            //Cells.Remove(Cells.Single(cell => cell.X == randomWaterSource.X && cell.Y == randomWaterSource.Y));
             Cells.Remove(randomCell);
             waterCells.Add(new Water(randomCell.X, randomCell.Y));
 
@@ -79,7 +78,7 @@ namespace SimulationApp
 
         private void GenerateTree()
         {
-            var treeCount = Cells.Count / 6;
+            var treeCount = Cells.Count / 10;
 
             var grounds = Cells.Where(cell => cell is Ground).ToList();
 
@@ -95,7 +94,7 @@ namespace SimulationApp
 
         private void GenerateRock()
         {
-            var rockCount = Cells.Count / 6;
+            var rockCount = Cells.Count / 10;
 
             var grounds = Cells.Where(cell => cell is Ground).ToList();
 
@@ -143,8 +142,6 @@ namespace SimulationApp
                 || (Math.Abs(cell.Y - relativeCell.Y) == 1 && cell.X == relativeCell.X)
                 && cell is Ground)
                 .ToList();
-        }
-
-        
+        }  
     }
 }

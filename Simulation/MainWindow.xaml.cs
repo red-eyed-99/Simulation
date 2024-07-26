@@ -20,8 +20,6 @@ namespace SimulationApp
         public MainWindow()
         {
             InitializeComponent();
-
-            DrawMapGrid(mapSize);
         }
 
         public void DrawMapGrid(int mapSize)
