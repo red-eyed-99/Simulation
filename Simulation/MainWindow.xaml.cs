@@ -17,14 +17,14 @@ namespace SimulationApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(int mapSize)
+        public MainWindow()
         {
             InitializeComponent();
 
             DrawMapGrid(mapSize);
         }
 
-        private void DrawMapGrid(int mapSize)
+        public void DrawMapGrid(int mapSize)
         {
             var cellSize = new GridLength(60);
 

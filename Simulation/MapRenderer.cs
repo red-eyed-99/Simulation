@@ -1,7 +1,10 @@
-﻿using SimulationApp.Landscape;
+﻿using SimulationApp.Creatures.Herbivores;
+using SimulationApp.Food;
+using SimulationApp.Landscape;
 using SimulationApp.Landscape.Surface;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +24,14 @@ namespace SimulationApp
 
         private Grid _mapGrid;
 
-        public MapRenderer(Map map, Window window)
+        public MapRenderer(Map map, Grid mapGrid)
         {
             _map = map;
-            _window = window;
-            _mapGrid = (Grid)_window.FindName("mapGrid");
+            _mapGrid = mapGrid;
+
+            RenderLandscape();
+            RenderGrass();
+            RenderOstrich();
         }
 
         public void RenderLandscape()

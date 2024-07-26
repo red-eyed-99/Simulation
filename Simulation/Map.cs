@@ -1,4 +1,6 @@
 ﻿using SimulationApp.Creatures;
+using SimulationApp.Creatures.Herbivores;
+using SimulationApp.Food;
 using SimulationApp.Landscape;
 using SimulationApp.Landscape.Surface;
 using System;
@@ -21,9 +23,12 @@ namespace SimulationApp
         public Map(int size)
         {
             Size = size;
+
+            GenerateLandscape();
+            GenerateCreatures();
         }
 
-        public void Generate()
+        private void GenerateLandscape()
         {
             GenerateGround();
             GenerateWater();
