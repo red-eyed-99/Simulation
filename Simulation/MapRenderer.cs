@@ -66,5 +66,33 @@ namespace SimulationApp
                 }
             }
         }
+
+        public void RenderGrass()
+        {
+            var grasses = _map.Cells.Where(cell => cell is Grass).ToList();
+
+            foreach(var grass in grasses)
+            {
+                var image = new Image();
+                image.Source = new BitmapImage(new Uri("Images/grass.png", UriKind.Relative));
+                Grid.SetColumn(image, grass.X);
+                Grid.SetRow(image, grass.Y);
+                _mapGrid.Children.Add(image);
+            }
+            }
+
+        public void RenderOstrich()
+        {
+            var ostriches = _map.Creatures.Where(cell => cell is Ostrich).ToList();
+
+            foreach (var ostrich in ostriches)
+            {
+                var image = new Image();
+                image.Source = new BitmapImage(new Uri("Images/ostrich.png", UriKind.Relative));
+                Grid.SetColumn(image, ostrich.X);
+                Grid.SetRow(image, ostrich.Y);
+                _mapGrid.Children.Add(image);
+            }
+        }
     }
 }

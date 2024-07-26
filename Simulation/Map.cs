@@ -34,7 +34,12 @@ namespace SimulationApp
             GenerateWater();
             GenerateTree();
             GenerateRock();
+            GenerateGrass();
+        }
 
+        private void GenerateCreatures()
+        {
+            GenerateHerbivores();
         }
 
         private void GenerateGround()
@@ -101,6 +106,33 @@ namespace SimulationApp
                 grounds.Remove(randomGround);
                 Cells.Remove(randomGround);
                 Cells.Add(new Rock(randomGround.X, randomGround.Y));
+            }
+        }
+
+        public void GenerateGrass()
+        {
+            var grounds = Cells.Where(cell => cell is Ground).ToList();
+
+            for (int i = 0; i < grounds.Count / 10; i++)
+            {
+                var randomGround = grounds[_random.Next(grounds.Count)];
+
+                grounds.Remove(randomGround);
+                Cells.Remove(randomGround);
+                Cells.Add(new Grass(randomGround.X, randomGround.Y));
+            }
+        }
+
+        private void GenerateHerbivores()
+        {
+            var grounds = Cells.Where(cell => cell is Ground).ToList();
+
+            for (int i = 0; i < 5; i++)
+            {
+                var randomGround = grounds[_random.Next(grounds.Count)];
+
+                grounds.Remove(randomGround);
+                Creatures.Add(new Ostrich(randomGround.X, randomGround.Y));
             }
         }
 

@@ -11,10 +11,7 @@ namespace SimulationApp.Creatures
         public int HealthPoint { get; set; }
         public int Speed { get; set; }
 
-        public Creature(int x, int y) : base(x, y)
-        {
-
-        }
+        public Creature(int x, int y) : base(x, y) { }
 
         public abstract void MakeMove();
     }
