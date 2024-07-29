@@ -9,5 +9,10 @@ namespace SimulationApp.Creatures.Herbivores
     public class Ostrich : Herbivore
     {
         public Ostrich(int x, int y) : base(x, y) { }
+
+        public override bool CanStep()
+        {
+            return false;
+        }
     }
 }

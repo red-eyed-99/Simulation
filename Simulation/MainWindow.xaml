@@ -22,7 +22,7 @@
         </Menu>
         <ScrollViewer Name="mapScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <Viewbox Stretch="Fill">
-                <Grid Name="mapGrid" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5" ShowGridLines="False" HorizontalAlignment="Center">
+                <Grid Name="mapGrid" Height="Auto" Width="Auto" RenderTransformOrigin="0.5,0.5" ShowGridLines="True" HorizontalAlignment="Center">
                     <Grid.LayoutTransform>
                         <ScaleTransform x:Name="scaleTransform"/>
                     </Grid.LayoutTransform>
@@ -32,5 +32,6 @@
                 </Grid>
             </Viewbox>
         </ScrollViewer>
+        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Center" Margin="0,24,0,0" Grid.Row="1" VerticalAlignment="Top" Height="41" Width="134"/>
     </Grid>
 </Window>

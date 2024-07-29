@@ -5,12 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SimulationApp.Landscape.Surface
-{
+{ 
     public class Water : BaseCell
     {
         public Water(int x, int y) : base(x, y)
         {
+            
+        }
 
+        public override bool CanStep()
+        {
+            return true;
         }
     }
 }

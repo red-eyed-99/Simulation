@@ -10,5 +10,10 @@ namespace SimulationApp.Landscape.Surface
     {
         public Dirt(int x, int y) : base(x, y) { }
 
+        public override bool CanStep()
+        {
+            return true;
+        }
+
     }
 }

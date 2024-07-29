@@ -10,5 +10,10 @@ namespace SimulationApp.Landscape
     {
         public Tree(int x, int y) : base(x, y) { }
 
+        public override bool CanStep()
+        {
+            return false;
+        }
+
     }
 }

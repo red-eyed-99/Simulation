@@ -10,11 +10,22 @@ namespace SimulationApp
     {
         public int X { get; set; }
         public int Y { get; set; }
-
+        public int PathLengthFromStart { get; set; }
+        public BaseCell? PreviousCell { get; set; }
+        public int ApproximatePathLength { get; set; }
+        public int ExpectedApproximateFullPathLength
+        {
+            get
+            {
+                return PathLengthFromStart + ApproximatePathLength;
+            }
+        }
         public BaseCell(int x, int y)
         {
             X = x;
             Y = y;
         }
+
+        public abstract bool CanStep();      
     }
 }

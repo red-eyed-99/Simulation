@@ -25,6 +25,15 @@ namespace SimulationApp
             mainWindow.DrawMapGrid(Map.Size);
 
             Renderer = new MapRenderer(Map, (Grid)mainWindow.FindName("mapGrid"));
+            mainWindow.Show();
+            Start();
+        }
+
+        public void Start()
+        {
+            var herbivores = Map.Creatures.OfType<Herbivore>().ToList();
+
+            herbivores.ForEach(herbivore => herbivore.FindPathToGrass(Map));
         }
     }
 }

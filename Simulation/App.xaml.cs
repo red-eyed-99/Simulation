@@ -11,7 +11,7 @@ namespace SimulationApp
     {
         [STAThread]
         static void Main()
-        {
+         {
             var app = new App();         
 
             var mainWindow = new MainWindow();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimulationApp.Creatures.Predators
 {
-    public class Predator : Creature
+    public class Predator : BaseCreature
     {
         public Predator(int x, int y) : base(x, y) { }
 

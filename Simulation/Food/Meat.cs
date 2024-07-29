@@ -10,5 +10,10 @@ namespace SimulationApp.Food
     {
         public Meat(int x, int y) : base(x, y) { }
 
+        public override bool CanStep()
+        {
+            return false;
+        }
+
     }
 }
